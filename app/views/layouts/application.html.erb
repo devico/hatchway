@@ -3,12 +3,35 @@
   <head>
     <title>Hatchway</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript">
+      if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var latitude = position.coords.latitude;
+          var longitude = position.coords.longitude;
+          $(document).ready(function(){
+            $("#latitude").val(latitude);
+            $("#longitude").val(longitude);
+          });
+        });
+      } else {
+        alert("Geolocation API не поддерживается в вашем браузере");
+      }
+    </script>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container" id="wrapper">
+      <div class="row" id="middle">
+        <div id="notice_block">
+          <%= render 'shared/alert_notice' %>
+        </div>
+        <div class="col-sm-12">
+          <h2>Use your force, Люк!</h2>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

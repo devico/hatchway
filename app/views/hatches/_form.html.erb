@@ -1,0 +1,37 @@
+<%= simple_form_for @hatch, :multipart => true do |f| %>
+  <% if @hatch.errors.any? %>
+    <div class="errors_messages">
+      <h2><%= f.error_notification %></h2>
+      <ul>
+        <% for message in @hatch.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+      <%= f.input :latitude, as: :hidden, input_html: { id: "latitude" } %>
+  </div>
+  <div class="form-group">
+    <%= f.input :longitude, as: :hidden, input_html: { id: "longitude" } %>
+  </div>
+  <div class="file-loading">
+      <%= f.file_field :photos, multiple: true %>
+  </div>
+  <div class="checkbox">
+    <%= f.input :a, as: :boolean, label: "на проезжей части" %>
+  </div>
+  <div class="checkbox">
+    <%= f.input :a1, as: :boolean, label: "больше 2 см от поверхности" %>
+  </div>
+  <div class="checkbox">
+    <%= f.input :b, as: :boolean, label: "зазоры больше 3 мм" %>
+  </div>
+  <div class="checkbox">
+    <%= f.input :c, as: :boolean, label: "нет отверстий на поверхности" %>
+  </div>
+  <div class="checkbox">
+    <%= f.input :d, as: :boolean, label: "неправильная маркировка" %>
+  </div>
+  <%= f.button :submit, "Create Order", class: 'btn btn-default' %>
+<% end%>

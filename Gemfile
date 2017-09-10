@@ -14,6 +14,8 @@ gem 'sqlite3'
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+gem 'bootstrap-sass'
+gem 'jquery-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -32,6 +34,12 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'simple_form', '~> 3.5'
+gem 'interactor'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'mailgun-ruby', '~> 1.1', '>= 1.1.6'
+gem 'carrierwave', '~> 1.0'
+gem 'mechanize', '~> 2.7', '>= 2.7.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
