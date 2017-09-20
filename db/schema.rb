@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170909105947) do
+ActiveRecord::Schema.define(version: 20170917212800) do
 
   create_table "hatches", force: :cascade do |t|
     t.boolean "a"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20170909105947) do
     t.string "photos"
     t.float "latitude"
     t.float "longitude"
+    t.string "address"
   end
 
 end

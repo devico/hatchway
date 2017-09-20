@@ -79,6 +79,7 @@ GEM
     erubi (1.6.1)
     execjs (2.7.0)
     ffi (1.9.18)
+    geocoder (1.4.4)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     http-cookie (1.0.3)
@@ -229,6 +230,7 @@ DEPENDENCIES
   carrierwave (~> 1.0)
   coffee-rails (~> 4.2)
   dotenv-rails
+  geocoder (~> 1.4, >= 1.4.4)
   interactor
   jbuilder (~> 2.5)
   jquery-rails

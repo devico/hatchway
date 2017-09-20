@@ -7,9 +7,11 @@ class WriteMessage
     @d = params[:d]
     @latitude = params[:latitude]
     @longitude = params[:longitude]
+    @address = params[:address]
   end
 
   def create_message_text
+    full_address = @address.split(/\s*,\s*/)
     if @a
       message_text = <<EOF
 Согласно п.п. 3.1.10, 3.1.11 ГОСТ Р 50597-93, люки смотровых колодцев и дождеприемников
@@ -23,6 +25,9 @@ class WriteMessage
 Координаты расположения люка:
 широта: #{@latitude}
 долгота: #{@longitude}
+город: #{full_address[0]}
+улица: #{full_address[1]}
+дом: #{full_address[2]}
 EOF
     end
     if @a1
@@ -40,6 +45,9 @@ EOF
 Координаты расположения люка:
 широта: #{@latitude}
 долгота: #{@longitude}
+город: #{full_address[0]}
+улица: #{full_address[1]}
+дом: #{full_address[2]}
 EOF
     end
     if @b
@@ -49,6 +57,9 @@ EOF
 Координаты расположения люка:
 широта: #{@latitude}
 долгота: #{@longitude}
+город: #{full_address[0]}
+улица: #{full_address[1]}
+дом: #{full_address[2]}
 EOF
     end
     if @c
@@ -58,6 +69,9 @@ EOF
 Координаты расположения люка:
 широта: #{@latitude}
 долгота: #{@longitude}
+город: #{full_address[0]}
+улица: #{full_address[1]}
+дом: #{full_address[2]}
 EOF
     end
     if @d
@@ -68,6 +82,9 @@ EOF
 Координаты расположения люка:
 широта: #{@latitude}
 долгота: #{@longitude}
+город: #{full_address[0]}
+улица: #{full_address[1]}
+дом: #{full_address[2]}
 EOF
     end
 

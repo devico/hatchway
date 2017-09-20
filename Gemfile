@@ -40,6 +40,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'mailgun-ruby', '~> 1.1', '>= 1.1.6'
 gem 'carrierwave', '~> 1.0'
 gem 'mechanize', '~> 2.7', '>= 2.7.5'
+gem 'geocoder', '~> 1.4', '>= 1.4.4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -6,8 +6,11 @@ class HatchesController < ApplicationController
 
   def create
     @hatch = Hatch.new(hatch_params)
+    #position = Geocoder.search("50.496416, 30.503069", :lookup => :yandex)
+    position = Geocoder.search("#{@hatch.latitude}, #{@hatch.longitude}", :lookup => :yandex)
+    @hatch.address = position.first.data.first[1].first[1].first[1]["Address"]["formatted"]
     if @hatch.save
-      @result = SendOrder.call(hatch_id: @hatch.id)
+      @result = MechanizeOrder.call(hatch_id: @hatch.id)
       redirect_to root_path(@hatch), notice: @result.message
     else
       render :new
