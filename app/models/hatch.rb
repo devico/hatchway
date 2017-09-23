@@ -6,14 +6,13 @@ class Hatch < ApplicationRecord
   validate :any_present?
 
   def geo_present?
-    if %w(latitude longitude).all?{|attr| self[attr].blank?}
-      errors.add :base, "Включите геолокацию, не определены широта и долгота"
-    end
+    if %w[latitude longitude].all? { |attr| self[attr].blank? }
+      errors.add :base, 'Включите геолокацию, не определены широта и долгота'
   end
 
   def any_present?
-    if %w(a a1 b c d).all?{|attr| self[attr].blank?}
-      errors.add :base, "Один из чекбоксов должен быть выбран"
+    if %w[a a1 b c d].all? { |attr| self[attr].blank? }
+      errors.add :base, 'Один из чекбоксов должен быть выбран'
     end
   end
 end
